@@ -1,3 +1,4 @@
+import edu.vadym.vorobel.Comparator;
 import org.opencv.core.Core;
 
 /**
@@ -9,6 +10,7 @@ public class ComparatorTest {
   }
 
   public static void main(String[] args) {
-
+    Comparator comparator = new Comparator();
+    comparator.compare("image1.jpg", "image2.jpg");
   }
 }
