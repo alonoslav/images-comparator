@@ -23,45 +23,9 @@ public class Comparator {
     List<MatOfPoint> contoursA = imageOperations.getReducedContours(imgA, 30);
     List<MatOfPoint> contoursB = imageOperations.getReducedContours(imgB, 30);
 
-    boolean firstIteration = true;
-    double result = 0.0;
-//    for (MatOfPoint contourA : contoursA) {
-//      double iterationResult = 0.0;
-//
-//      Contour cA = new Contour();
-//      cA.set(contourA.toList());
-//      Point center = cA.getContourCenter();
-//
-//      cA.rotate(cA.getAngle(), center);
-//
-//      Mat image = new Mat(imgA.size(), CvType.CV_8UC3);
-//      cA.drawContour(image, new Scalar(255, 0, 0));
-//      double angle = 0;
-//
-//      for (MatOfPoint contourB : contoursB) {
-//        Contour cB = new Contour();
-//        cB.set(contourB.toList());
-//        cB.move(cA.getContourCenter());
-//
-//
-//        for (int i = 0; i < cB.get().size(); i++) {
-//          double localAngle = cB.getAngle(cB.get(i), center);
-//          cB.rotate(localAngle, center);
-//          double tempResult = distance.frechet(cA.get(), cB.get());
-//
-//          if (firstIteration || !firstIteration && tempResult < iterationResult) {
-//            iterationResult = tempResult;
-//            angle = localAngle;
-//            firstIteration = false;
-//            cB.drawContour(image, new Scalar(0, 0, 255));
-//          }
-//
-//          cB.rotate(-localAngle, center);
-//        }
-//      }
-//      GUI.displayImage(image);
-//      result = Math.max(result, iterationResult);
-//    }
+    double result = gromovFrechet.getDistance(contoursA, contoursB);
+
+    System.out.println(result);
     return 0;
   }
 }
