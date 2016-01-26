@@ -1,4 +1,4 @@
-package edu.vadym.vorobel.tools;
+package edu.image.comparator.tools;
 
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
