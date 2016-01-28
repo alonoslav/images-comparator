@@ -1,6 +1,6 @@
 package edu.image.comparator.distances.frechet;
 
-import edu.image.comparator.distances.ComparatorInterface;
+import edu.image.comparator.distances.DistanceInterface;
 import edu.image.comparator.tools.GeometryUtils;
 import org.opencv.core.Point;
 
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Vadym on 19.01.2016.
  */
-public class Frechet implements ComparatorInterface {
+public class Frechet implements DistanceInterface {
   public boolean isGromovMode() {
     return false;
   }

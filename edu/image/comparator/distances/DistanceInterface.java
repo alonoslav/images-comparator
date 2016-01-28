@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Vadym on 10.01.2016.
  */
-public interface ComparatorInterface {
+public interface DistanceInterface {
   boolean isGromovMode();
   double getDistance(List<Point> contour1, List<Point> contour2);
 }

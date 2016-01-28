@@ -1,4 +1,6 @@
 import edu.image.comparator.Comparator;
+import edu.image.comparator.distances.frechet.Frechet;
+import edu.image.comparator.distances.gromovFrechet.GromovFrechet;
 import org.opencv.core.Core;
 
 /**
@@ -11,7 +13,11 @@ public class ComparatorTest {
 
   public static void main(String[] args) {
     Comparator comparator = new Comparator();
-    double result = comparator.compare("src\\images\\image1.png", "src\\images\\image1.png");
+
+    comparator.add(new Frechet(), 0.5);
+    comparator.add(new GromovFrechet(), 0.5);
+    double result = comparator.compare("src\\images\\image1.png", "src\\images\\image2.png");
+
     System.out.println("RESULT = " + result);
   }
 }
